@@ -1,5 +1,6 @@
 from sqlite3 import Time
-from PyQt5 import QtWidgets, QtCore
+#from PyQt5 import QtWidgets, QtCore
+from PySide6 import QtWidgets, QtCore
 from pyqtgraph import PlotWidget, plot
 import pyqtgraph as pg
 import sys  # We need sys so that we can pass argv to QApplication
@@ -44,7 +45,7 @@ class MainWindow(QtWidgets.QMainWindow):
         # Set timer with update_data function
         self.graphWidget.addLegend()
         self.timer = QtCore.QTimer()
-        self.timer.setInterval(1)
+        self.timer.setInterval(3)
         self.timer.timeout.connect(self.update_plot_data)
         self.timer.start()
 
